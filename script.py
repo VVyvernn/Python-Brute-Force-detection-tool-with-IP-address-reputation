@@ -130,12 +130,12 @@ if __name__ == "__main__":
         [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
         top_10_conf(results)
         top_10_count(results)
-    elif args.ssh:
+    elif args.ssh or args.all:
         results = find_failed_ssh(path)
         [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
         top_10_conf(results)
         top_10_count(results)
-    elif args.telnet:
+    elif args.telnet or args.all:
         results = find_failed_telnet(path)
         [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
         top_10_conf(results)
