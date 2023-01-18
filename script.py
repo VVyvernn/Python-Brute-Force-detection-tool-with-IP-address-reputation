@@ -85,7 +85,7 @@ def top_10_conf(results):
         r2[ip] = fssh
     results = r2
     ll = [(k, v) for k, v in sorted(results.items(), key=lambda item: item[1].confidence_level, reverse=True)][:10]
-
+    [print(l[0], l[1]) for l in ll]
     with open(str(args.save), 'w') as f:
         f.write("Top IPs based on AbuseIPDB confidence level")
         f.writelines([f"{l[0]} {l[1]}\n" for l in ll])
@@ -99,6 +99,7 @@ def top_10_count(results):
         r2[ip] = fssh
     results = r2
     ll = [(k, v) for k, v in sorted(results.items(), key=lambda item: item[1].count, reverse=True)][:10]
+    [print(l[0], l[1]) for l in ll]
     with open(str(args.save), 'w') as f:
         f.write("Top IPs based on amount of failed connections")
         f.writelines([f"{l[0]} {l[1]}\n" for l in ll])
