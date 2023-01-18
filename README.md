@@ -12,3 +12,7 @@ Arguments when launching:
 --telnet - will only check telnet
 
 --save - optional, define where results will be saved
+
+Cron tab entry can look like this:
+
+0 * * * 1 /tmp/script.py
