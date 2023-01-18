@@ -71,7 +71,7 @@ def check_ip(ip):
     decoded = json.loads(response.text)
     try:
         conflvl = decoded['data']
-    except AttributeError as error:
+    except KeyError as error:
         print(f"data fetching gone bad {error}, most likley used all of API requests for today")
         exit(1)
 
