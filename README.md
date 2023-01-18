@@ -16,3 +16,8 @@ Arguments when launching:
 Cron tab entry can look like this:
 
 0 * * * 1 /tmp/script.py
+
+
+There is also an example auth.log file provided, USE IT WITH --ssh ARGUMENT! ALSO WATCH OUT YOU CAN REACH THE API CALL LIMIT FOR ONE DAY VERY QUICKLY IF YOU USE THE EXAMPLE FILE TOO OFTEN
+
+If all IP addresses have confidence level of 0, everything is fine this means none of these IPs are malicious.
