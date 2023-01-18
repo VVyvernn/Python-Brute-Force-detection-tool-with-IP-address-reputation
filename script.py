@@ -72,7 +72,7 @@ def check_ip(ip):
     try:
         conflvl = decoded['data']
     except AttributeError as error:
-        print(f"data fetching gone bad {error}")
+        print(f"data fetching gone bad {error}, most likley used all of API requests for today")
         exit(1)
 
     return conflvl['abuseConfidenceScore']
