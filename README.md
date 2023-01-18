@@ -3,6 +3,8 @@ For this to work you NEED a API key for abuseipdb.com. You can put in the cron t
 
 The script check auth.log(by default), finds failed connections saves them, and counts how many times this IP address tried to connect and to which users. Then uses the API to check how malicious is the IP address and saves the results.
 
+The implementation is very convoluted and can be done in a much simpler and more efficient way, just replacing the dictionary would improve the project and make sorting much simpler.
+
 Arguments when launching:
 
 --all - will check for both telnet and SSH
