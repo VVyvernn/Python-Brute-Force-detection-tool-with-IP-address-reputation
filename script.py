@@ -121,25 +121,16 @@ if __name__ == "__main__":
 
     path = "./auth.log"
 
-    if args.all:
+    if args.ssh or args.all:
         results = find_failed_ssh(path)
         [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
         top_10_conf(results)
         top_10_count(results)
+    if args.telnet or args.all:
         results = find_failed_telnet(path)
         [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
         top_10_conf(results)
         top_10_count(results)
-    elif args.ssh or args.all:
-        results = find_failed_ssh(path)
-        [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
-        top_10_conf(results)
-        top_10_count(results)
-    elif args.telnet or args.all:
-        results = find_failed_telnet(path)
-        [fssh.set_confidence_level(check_ip(ip)) for ip, fssh in results.items()]
-        top_10_conf(results)
-        top_10_count(results)
-    else:
-        exit(1)
+
+    exit(1)
 
